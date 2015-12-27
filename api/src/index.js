@@ -1,5 +1,13 @@
 var Hapi = require('hapi')
 
+var options = {
+    storeBlank: false,
+    cookieOptions: {
+        password: 'password',
+        isSecure: false
+    }
+};
+
 var server = module.exports = new Hapi.Server({
   connections: {
     routes: {
@@ -9,11 +17,18 @@ var server = module.exports = new Hapi.Server({
 })
 
 server.connection({
+
+  host: 'localhost',
   port: 9000
 })
 
+server.register({
+    register: require('yar'),
+    options: options
+}, function (err) { });
+
 // load routes
-require('./routes/hello.js')
+require('./routes/routes.js')
 
 server.start(function (err) {
   if (err) {

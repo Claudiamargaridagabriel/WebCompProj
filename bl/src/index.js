@@ -1,77 +1,49 @@
-var doctor=require('./doctors.json')
-var request=require('./requests.json')
-var patient=require('./patients.json')
-var acts=require('./acts.json')
-var actsrmb=require('./acts-rmb.json')
-var report=require('./reports.json')
-var fs = require('fs')
-
 exports = module.exports
+
+doctors=require('./doctors.json');
+patients=require('./patients.json');
+reports=require('./reports.json');
+acts=require('./acts.json');
+actsReimbursement=require('./acts-rmb.json');
 
 exports.sayHello = function (name) {
   return 'Hello ' + (name || 'World')
 }
 
-exports.login = function (usr,pass) {
-  for (var i=0;i<doctor.length;i++){
-    if (doctor[i].user==usr){
-      if (doctor[i].pass==pass){
-        return [true,doctor[i].name]
-      }else{
-        return [false,'']
-      }
-    }
-    }
+exports.login = function(name, pass) {
+	for(var i=doctors.length;--i>-1;){
+		var doc = doctors[i];
+		if(doc.user==name && doc.pass==pass)
+			return doc;
+	}
 }
 
-exports.patient= function (){
-  return patient
+exports.getPatients = function(){
+	return patients;
 }
 
-exports.request= function (){
-  return request
+exports.getPatientById = function(id){
+	for(var i=patients.length;--i>-1;){
+		var pat = patients[i];
+		if(pat.patID==id)
+			return pat;
+	}
 }
 
-exports.acts= function (){
-  return acts
+exports.getPatientMedicalReports = function(id){
+	var ret = [];
+	for(var i=reports.length;--i>-1;){
+		var rep = reports[i];
+		if(rep.patID==id)
+			ret.push(rep);
+	}
+	return ret;
 }
 
-exports.addmedact= function(pId,policyT){
-  var reportsdata=[];var actsdata=[];var actsrembdata=[];
-
-  actsrembdata=actsrmb.filter(function(el){
-  return el.policy_type == policyT})
-
-  for (var i=0;i<report.length;i++){
-     if (pId==report[i].patID){reportsdata.push({act:report[i].actID})}
-  }
-  for (var j=0;j<reportsdata.length;j++){
-    for (var i=0;i<acts.length;i++){
-      if (acts[i].actID==reportsdata[j].act){actsdata.push({type:acts[i].name,cost:acts[i].cost,reimb:actsrembdata[0].reimb_percentage})}
-    }
-  }
-  return actsdata
+exports.getActs = function(){
+	return acts;
 }
 
-exports.save = function(type,name,cost,pID,ptype){
-  actsrembdata=actsrmb.filter(function(el){
-  return el.policy_type == policyT})
-
-  report.push({"repID":report.length,"date":"1/1/2012","docID":1,"patID":pID,"actID":type,"actual_reimb_perc":actsrembdata[0].reimb_percentage});
-  fs.writeFileSync('/home/sise-cweb/Desktop/project-template/bl/src/reports.json', JSON.stringify(report))
-  var acts=require('./reports.json')
-  var reportsdata=[];var actsdata=[];var actsrembdata=[];
-
-  actsrembdata=actsrmb.filter(function(el){
-  return el.policy_type == policyT})
-
-  for (var i=0;i<report.length;i++){
-     if (pId==report[i].patID){reportsdata.push({act:report[i].actID})}
-  }
-  for (var j=0;j<reportsdata.length;j++){
-    for (var i=0;i<acts.length;i++){
-      if (acts[i].actID==reportsdata[j].act){actsdata.push({type:acts[i].name,cost:acts[i].cost,reimb:actsrembdata[0].reimb_percentage})}
-    }
-  }
-  return actsdata
+exports.getActsReimbursement = function(){
+	return actsReimbursement;
 }

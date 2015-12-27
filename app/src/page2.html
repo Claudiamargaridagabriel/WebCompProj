@@ -72,15 +72,15 @@
 
 
 
-    <div style="margin-top:100px" ng-controller="patientsCtrl">
-    <table class="table">
+    <div style="margin-top:100px">
+    <table style="width:100%">
 		<tr>
-			<th>Patient ID</th>
+			<th>Date</th>
 			<th>Patient</th>
-		</tr>
-		<tr ng-repeat="patient in patients">
-			<td>{{patient.patID}}</td>
-			<td><a ng-href="patient.html?patId={{patient.patID}}" style="color:white">{{patient.name}}</td>
+			<th>Policy</th>
+			<th>Act</th>
+			<th>Price</th>
+			<th>Refund</th>
 		</tr>
 	</table>
 

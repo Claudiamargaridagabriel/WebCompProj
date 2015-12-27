@@ -1,7 +1,0 @@
-exports.hello = require('./hello')
-exports.login = require('./login')
-exports.userinfo = require('./userinfo')
-exports.patients = require('./patients')
-exports.patientData = require('./patientData')
-exports.acts = require('./acts')
-exports.actsReimbursement = require('./actsReimbursement')

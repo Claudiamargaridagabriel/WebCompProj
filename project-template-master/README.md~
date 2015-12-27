@@ -53,14 +53,6 @@ $ npm i
 $ npm test
 ```
 
-####ANTES DE CORRER####
-
-instalar hapi e yar na pasta /api/src
-
-npm install hapi
-npm install yar
-
-
 ### RESTful API
 
 Here you can find the foundation for your RESTful API. This template presents two routes, one with GET and one with POST, using the example business logic available on the `bl` folder.

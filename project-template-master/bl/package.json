@@ -1,12 +1,11 @@
 {
-  "name": "api",
+  "name": "bl",
   "version": "0.0.0",
-  "description": "RESTful API for the SISE-CWEB Project",
+  "description": "Business Logic",
   "main": "src/index.js",
   "scripts": {
-    "test": "node tests/*-test.js",
     "codestyle": "standard",
-    "start": "node src/index.js"
+    "test": "node tests/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -16,15 +15,12 @@
     "SISE",
     "CWEB"
   ],
-  "author": "Cláudia Gabriel, Nuno Lobato Faria, João Dias",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sise-cweb/project-template/issues"
   },
   "homepage": "https://github.com/sise-cweb/project-template#readme",
-  "dependencies": {
-    "hapi": "^11.1.2"
-  },
   "devDependencies": {
     "standard": "^5.4.1",
     "tape": "^4.2.2"

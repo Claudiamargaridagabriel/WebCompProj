@@ -36,7 +36,7 @@ exports.acts= function (){
   return acts
 }
 
-exports.addmedact= function(pId,policyT){
+exports.actsPat= function(pId,policyT){
   var reportsdata=[];var actsdata=[];var actsrembdata=[];
 
   actsrembdata=actsrmb.filter(function(el){

@@ -14,8 +14,8 @@ exports.login = function handler (request, reply) {
   reply(bl.login(request.payload.user,request.payload.password))
 }
 
-exports.patients = function handler (request, reply) {
-  reply(bl.patients())
+exports.patient = function handler (request, reply) {
+  reply(bl.patient())
 }
 
 exports.acts = function handler (request, reply) {
@@ -26,11 +26,11 @@ exports.request = function handler (request, reply) {
   reply(bl.request())
 }
 
-exports.addmedact= function handler (request,reply){
+exports.actsPat = function handler (request,reply){
   reply(bl.actsPat(request.payload.patientID,request.payload.policyType))
 }
 
-exports.savemedact = function handler (request,reply){
+exports.save = function handler (request,reply){
   reply(bl.actsPat(request.payload.acttype,request.payload.actname,request.payload.cost,request.payload.patientId,request.payload.poltype))
 }
 

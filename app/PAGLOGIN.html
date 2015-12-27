@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InSure WebApp</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/form-elements.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+  <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src = "cwApp.js"> </script>
+
+
+
+
+</head>
+
+<body background="http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg">>
+
+  <!-- Top content -->
+  <div class="top-content">
+
+    <div class="inner-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text">
+            <div class="col-xs-6 col-md-4">
+              <a href=www.Insure.com class="thumbnail-centered">
+                <img src="http://tarponspineandmedical.com/wp-content/uploads/2014/10/icon.png" alt="...">
+              </a>
+            </div>
+            <h1><strong>InSure</strong> Login Form</h1>
+            <div class="description">
+              <p>
+                <a href="http://Insure.com">Please login to <strong>InSure</strong></a> webapp
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3>Login to our site if this works since nobody took the time to teach us how to do this</h3>
+                  <h3>Really....I have no clue of what I am doing</h3>
+                  <h3></h3>
+                  <p>Enter your username and password to log on:</p>
+                </div>
+                <div class="form-top-right">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="form-bottom" ng-app="login"
+          		data-ng-controller="loginctrl"
+          		ng-init="cwSwitch=false">
+                <form role="form" action="" method="post" class="login-form">
+                  <div class="form-group">
+                    <label class="sr-only" for="form-username">Username</label>
+                    <input type="text" class="form-control" id="InputUser" placeholder="Username" name="username" ng-model="username">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="form-password">Password</label>
+                    <input type="password" class="form-control" id="InputPassword" placeholder="Password" name="password" ng-model="password">
+                  </div>
+                  <button class="btn btn-primary" onclick="verify(username, password);teste()">Log in!</button>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </body>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/bl.js"></script>
+  <script src="/js/app.js"></script>
+
+  </html>

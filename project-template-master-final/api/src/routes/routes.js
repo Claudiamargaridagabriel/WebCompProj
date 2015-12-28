@@ -48,3 +48,9 @@ server.route({
 	path: '/actsReimbursement',
 	handler: resources.actsReimbursement.get
 })
+
+server.route({
+	method: 'GET',
+	path: '/requests',
+	handler: resources.hello.getRequest
+})

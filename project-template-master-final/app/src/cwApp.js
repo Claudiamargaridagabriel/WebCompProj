@@ -7,6 +7,13 @@ app.controller('mainCtrl', function($scope, $http){
 		$scope.username = 'Doctor ' + response.data.name;
 	});
 	
+	
+	
+	$http.get(endpoint + 'requests').then(function(response){
+		$scope.requests = response.data;
+	});
+	
+	
 });
 app.controller('patientsCtrl', function($scope, $http){
 	$scope.patients = [];
@@ -14,6 +21,9 @@ app.controller('patientsCtrl', function($scope, $http){
 		$scope.patients = response.data;
 	});
 });
+
+
+
 
 app.controller('patientCtrl', function($scope, $http, $location){
 	$scope.findAct = function(actId){

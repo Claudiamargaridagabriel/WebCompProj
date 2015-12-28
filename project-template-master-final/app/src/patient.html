@@ -71,19 +71,37 @@
 
 
 
-
-    <div style="margin-top:100px" ng-controller="patientsCtrl">
+	<div class="panel panel-default" style="margin-left:50px; margin-right:50px" ng-controller="patientCtrl">
     <table class="table">
 		<tr>
-			<th>Patient ID</th>
-			<th>Patient</th>
+			<th style="width:25%">Patient ID</th>
+			<th style="width:25%">Name</th>
+			<th style="width:25%">Policy Type</th>
+			<th style="width:25%">Policy No</th>
 		</tr>
-		<tr ng-repeat="patient in patients">
-			<td>{{patient.patID}}</td>
-			<td><a ng-href="patient.html?patId={{patient.patID}}" style="color:white">{{patient.name}}</td>
+		<tr>
+			<td style="width:25%">{{patient.patID}}</td>
+			<td style="width:25%">{{patient.name}}</td>
+			<td style="width:25%">{{patient.policy_type}}</td>
+			<td style="width:25%">{{patient.policy_number}}</td>
 		</tr>
-	</table>
 
+	</table>
+	<table class="table">
+			<tr>
+				<th style="width:25%">Date</th>
+				<th style="width:25%">Type</th>
+				<th style="width:25%">Cost</th>
+				<th style="width:25%">Reimbursement %</th>
+			</tr>
+			<tr ng-repeat="report in reports">
+				<td style="width:25%">{{report.date}}</td>
+				<td style="width:25%">{{findAct(report.actID).name}}</td>
+				<td style="width:25%">{{findAct(report.actID).cost}}</td>
+				<td style="width:25%">{{findActReimbursement(report.actID)}}</td>
+			</tr>
+
+		</table>
 </div>
 </div>
 

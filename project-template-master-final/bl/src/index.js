@@ -5,6 +5,12 @@ patients=require('./patients.json');
 reports=require('./reports.json');
 acts=require('./acts.json');
 actsReimbursement=require('./acts-rmb.json');
+requests=require('./requests.json');
+
+
+exports.getRequest = function(){
+	return requests;
+}
 
 exports.sayHello = function (name) {
   return 'Hello ' + (name || 'World')

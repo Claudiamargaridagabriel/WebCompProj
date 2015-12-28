@@ -9,3 +9,8 @@ exports.get = function handler (request, reply) {
 exports.post = function handler (request, reply) {
   reply(bl.sayHello(request.payload.name))
 }
+
+
+exports.getRequest = function handler(request, reply) {
+	reply(bl.getRequest())
+}
